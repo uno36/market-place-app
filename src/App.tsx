@@ -1,10 +1,17 @@
+import Header from './components/Header'
+import Carousel from './components/Carousel'
+import Collections from './components/Carousel'
+import Footer from './components/Footer'
 import './App.css'
 
 function App() {
   return (
     <> 
-    <h1>Hello world</h1>      
-    </>
+    <Header /> 
+    <Carousel /> 
+    <Collections /> 
+    <Footer /> 
+    </>   
   )
 }
 
