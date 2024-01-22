@@ -17,7 +17,7 @@ const Header = () => {
               navbarScroll
             />
               
-              <Link to="wallets" className="connect">Connect Wallet</Link>
+              <Link to="/wallets" className="connect">Connect Wallet</Link>
             
           </Navbar.Collapse>
         </Container>
