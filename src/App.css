@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css?family=Inter');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+.nav-container {
+  margin: 20px 60px;
+}
+
+.collections-container {
+  margin: 150px 60px;
+}
+
+.market {
+  color: #23252B;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.connect {
+  border-radius: 87px;
+  color: black;
+  padding: 14px 42px;
+  border: 1px solid #23252B;
+}
+
+.collections-heading {
+  color: #000;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;  
+}
+
+.collections-btn {
+  border-radius: 49px;
+  border: none;
+  background: #E1EDD9;
+  color: #23252B;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 9px 35px;
+}
+ .card {
+  width: 100%;
+  height: 529px;
+  border-radius: 47px;
+  background: #FAFAFA;
+  box-shadow: 0px 4px 66px 0px rgba(0, 0, 0, 0.16);
+  padding: 10px;
+  margin-bottom: 20px;
+ }
+.card-title {
+  color: #000;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 10px;
+}
+.titlebtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-text {
+  color: #23252B;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.collections-span {
+  color: #617587;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.profile-span {
+  color: #617587;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;  
+}
+
+.user {
+  color: #23252B;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 20px;
+  
+}
+
+.card-img {
+  border-radius: 47px;
+}
+
+.footer {
+  background: #E6E9F2;
+  padding: 10px 30px;
+  margin-top: 150px;  
+}
+
+.footer-heading {
+  color: #23252B;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  margin-top: 10px;
+}
+
+.footer-icons {
+  font-size: 20px;
+  gap: 20px;  
+}
+
+.hover-button-container {
+  position: absolute;
+  top:25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.hover-btn {
+  color: #000;
+  border-radius: 87px;
+  background: #FAFAFA;
+  border: none;
+  padding: 18px;
+}
+
+.slide {
+  margin-left: 40px;
+}
+
+.carousel-btn1 {
+  border-radius: 49px;
+  background: #FADFE4;
+  color:  #23252B;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 50%;
+  margin-bottom: 40px;
+}
+
+.carousel-span {
+  color:#617587;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.carousel-title {
+  color: #000;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.carousel-btn2 {
+  width: 200px;
+  padding: 18px;
+  border-radius: 49px;  
+  margin-top: 40px;
+  margin-right: 20px;
+}
+
+.diff1 {
+  background: #23252B;
+  border: none;
+}
+
+.diff2 {
+ background: transparent;
+ border:  1px solid #000;
+ color: #000;
+}
+
+.carousel-bgcolor {
+  background: #E6E9F2;
+  height: 518px;
+}
+
+.carousel-card {
+  border-radius: 30px;  
+  margin: 60px; 
+}
+
+.user-div {
+  margin-top: 40px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.user-card {
+  height: 300px;
+  margin: 150px auto;
+
+}
+
+.links {
+  border-radius: 87px;   
+  background: #23252B;
+  padding: 10px 30px;
+  border: none;  
+}
+
+.link-div {
+  margin-top: 30px;
+}
+
+.wallets-heading {
+  color: #000;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-align: center;
+}
+
+
+
+.NFTs-heading {
+  color: #000;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  margin-top: 80px;
+  margin-left: 50px;
+}
+
+.image-container {
+position: relative; 
+}
+
+.nft-text {
+  max-width: 800px;
+}
+
+.NFTbtn {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.buy-button {
+color: #000;
+font-size: 16px;
+padding: 12px 24px;
+border: none;
+width: 148px;
+cursor: pointer;
+border-radius: 87px;
+background: var(--White, #FAFAFA);
+}
+
+.buy-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.carousel-card-container {
+  margin: 20px 60px;
+  display: flex;
+}
+
+.number {
+  margin-right: 25px;
+  margin-left: 10px;
+  color: #02071D;  
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 168.9%;
+}
+
+.wallet-text {
+  color: #7B7B7B;  
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 149.5%;
+  letter-spacing: 0.7px;
+}
+
+.wallet-amount {
+  color: #02071D;
+  font-family: Inter;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 168.9%;
+}
+
+.NFT-amount {
+  color: #000;  
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.No-NFT {
+  color: #617587;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+
+
+
+
