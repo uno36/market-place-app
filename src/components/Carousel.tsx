@@ -3,27 +3,41 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import CollectionData from "./collectionData";
 import { Link } from "react-router-dom";
-import { setShowPopup, setSelectedNFT } from "../redux/slice";
+import {
+  decreaseWalletAmount,
+  setShowPopup,
+  setSelectedNFT,
+} from "../redux/slice";
 import Popup from "./Popup";
 
 type NFT = {
   id: number;
   imgsrc: string;
-  // Add other properties as needed
+  price: number;
 };
- 
+
 const Carousel = () => {
   const dispatch = useDispatch();
   const selectedNFT = useSelector(
     (state: { app: { boughtNFT: NFT | null } }) => state.app.boughtNFT
   );
 
+  const boughtNFTs = useSelector(
+    (state: { app: { boughtNFTs: NFT[] } }) => state.app.boughtNFTs
+  );
+
   const showPopup = useSelector(
     (state: { app: { showPopup: boolean } }) => state.app.showPopup
   );
+
+  const walletAmount = useSelector(
+    (state: { app: { walletAmount: number } }) => state.app.walletAmount
+  );
+
   const handleBuy = (id: number) => {
     const selectedNFT = CollectionData.find((nft) => nft.id === id);
     if (selectedNFT) {
+      dispatch(decreaseWalletAmount(selectedNFT.price));
       dispatch(setSelectedNFT(selectedNFT));
       dispatch(setShowPopup(true));
     }
@@ -76,8 +90,9 @@ const Carousel = () => {
       <Popup
         show={showPopup}
         handleClose={handleClosePopup}
-        walletAmount={2.5}
+        walletAmount={walletAmount}
         boughtNFT={selectedNFT}
+        boughtNFTs={boughtNFTs}
         handleBuy={() => {}}
       />
     </>

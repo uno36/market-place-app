@@ -2,13 +2,14 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { LuCopy } from "react-icons/lu";
+import { useNavigate } from "react-router-dom";
 
 interface PopupProps {
   show: boolean;
   handleClose: () => void;
   walletAmount: number;
-  boughtNFTs: { id: number; imgsrc: string }[];
   boughtNFT: { id: number; imgsrc: string } | null;
+  boughtNFTs?: { id: number; imgsrc: string }[];
   handleBuy: () => void;
 }
 
@@ -16,9 +17,12 @@ const Popup: React.FC<PopupProps> = ({
   show,
   handleClose,
   walletAmount,
-  boughtNFT = { id: 2, imgsrc: '../images/NFT2.png' },
+  boughtNFTs = [],
+  boughtNFT = null,
   handleBuy,
 }) => {
+  const navigate = useNavigate();
+
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
@@ -32,13 +36,25 @@ const Popup: React.FC<PopupProps> = ({
           In your wallet
           <br /> <span className="wallet-amount">{walletAmount} BTC</span>
         </p>
-        {boughtNFT ? (
+        {boughtNFTs.length > 0 ? (
           <>
             <p className="NFT-amount">Your NFTs</p>
+            {boughtNFTs.map((boughtNFT) => (
+              <img
+                key={boughtNFT.id}
+                src={boughtNFT.imgsrc}
+                alt={`Bought NFT ${boughtNFT.id}`}
+                className="img-fluid img-array"                
+              />
+            ))}
+          </>
+        ) : boughtNFT ? (
+          <>
+            <p className="NFT-amount">Your NFT</p>
             <img
               src={boughtNFT.imgsrc}
-              alt="Bought NFT"
-              className="img-fluid"
+              alt={`Bought NFT ${boughtNFT.id}`}
+              className="img-fluid img-array"
             />
           </>
         ) : (
@@ -53,6 +69,7 @@ const Popup: React.FC<PopupProps> = ({
           variant="primary"
           onClick={() => {
             handleBuy();
+            navigate("/collection");
           }}
         >
           Start Shopping

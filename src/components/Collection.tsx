@@ -5,38 +5,22 @@ import CollectionData from "./collectionData";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Header from "./Header";
 import Footer from "./Footer";
-import Popup from "./Popup";
 import { useDispatch } from "react-redux";
-import { addBoughtNFT } from "../redux/slice";
+import { addBoughtNFT, decreaseWalletAmount, setSelectedNFT } from "../redux/slice";
 
 const Collection = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [showPopup, setShowPopup] = useState(false);
-  const [boughtNFTs, setBoughtNFTs] = useState<
-    {
-      id: number;
-      imgsrc: string;
-    }[]
-  >([]);
+  
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  const handleShowPopup = () => {
-    setShowPopup(true);
-  };
-
-  const handleClosePopup = () => {
-    setShowPopup(false);
-  };
-
+  
   const handleBuy = (id: number) => {
     const selectedNFT = CollectionData.find((nft) => nft.id === id);
     if (selectedNFT) {
-      setBoughtNFTs((prevNFTs) => [...prevNFTs, selectedNFT]);
-      handleShowPopup();
-      navigate("/account");
-      // Dispatch action to add bought NFT to the list
+      dispatch(decreaseWalletAmount(selectedNFT.price));
+      dispatch(setSelectedNFT(selectedNFT))
       dispatch(addBoughtNFT());
+      navigate('/account')
     }
   };
 
@@ -69,16 +53,7 @@ const Collection = () => {
         ))}
       </div>
 
-      <Footer />
-
-      <Popup
-        show={showPopup}
-        handleClose={handleClosePopup}
-        walletAmount={2.5}
-        boughtNFT={boughtNFTs.length > 0 ? boughtNFTs[boughtNFTs.length - 1] : null}
-        boughtNFTs={boughtNFTs}
-        handleBuy={() => handleBuy(0)}
-        /> 
+      <Footer />      
     </>
   );
 };

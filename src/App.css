@@ -265,7 +265,7 @@ position: relative;
 
 .NFTbtn {
 position: absolute;
-top: 50%;
+top: 40%;
 left: 50%;
 transform: translate(-50%, -50%);
 }
@@ -278,7 +278,7 @@ border: none;
 width: 148px;
 cursor: pointer;
 border-radius: 87px;
-background: var(--White, #FAFAFA);
+background: #FAFAFA;
 }
 
 .buy-button:hover {
@@ -335,6 +335,10 @@ background: var(--White, #FAFAFA);
   text-align: center;
 }
 
+.img-array {
+  width: "20px";
+  height: "20px";
+}
 
 
 
