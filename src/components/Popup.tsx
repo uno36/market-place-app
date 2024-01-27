@@ -13,8 +13,6 @@ interface PopupProps {
   handleBuy: () => void;
 }
 
-// ... (imports remain unchanged)
-
 const Popup: React.FC<PopupProps> = ({
   show,
   handleClose,
