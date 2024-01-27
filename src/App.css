@@ -227,7 +227,8 @@ a {
   border-radius: 87px;   
   background: #23252B;
   padding: 10px 30px;
-  border: none;  
+  border: none;
+  color: white;  
 }
 
 .link-div {
@@ -335,9 +336,11 @@ background: #FAFAFA;
   text-align: center;
 }
 
-.img-array {
-  width: "20px";
-  height: "20px";
+.shop {  
+  width: 200px;
+  padding: 14px;
+  border-radius: 87px;
+  background: #23252B;
 }
 
 

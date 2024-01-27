@@ -11,7 +11,7 @@ const initialState: AppState = {
   showPopup: false,
   boughtNFT: null,
   boughtNFTs: [],
-  walletAmount: 2.5, 
+  walletAmount: 2.50, 
 };
 
 const appSlice = createSlice({
@@ -37,7 +37,9 @@ const appSlice = createSlice({
       state.boughtNFT = null;
     },
     decreaseWalletAmount: (state, action: PayloadAction<number>) => {      
-      state.walletAmount -= action.payload;
+      state.walletAmount = parseFloat(
+        (state.walletAmount - action.payload).toFixed(2)
+      );
     },
   },
 });

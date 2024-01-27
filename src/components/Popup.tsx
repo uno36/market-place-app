@@ -44,7 +44,7 @@ const Popup: React.FC<PopupProps> = ({
                 key={boughtNFT.id}
                 src={boughtNFT.imgsrc}
                 alt={`Bought NFT ${boughtNFT.id}`}
-                className="img-fluid img-array"                
+                className="img-fluid"                
               />
             ))}
           </>
@@ -54,7 +54,7 @@ const Popup: React.FC<PopupProps> = ({
             <img
               src={boughtNFT.imgsrc}
               alt={`Bought NFT ${boughtNFT.id}`}
-              className="img-fluid img-array"
+              className="img-fluid"
             />
           </>
         ) : (
@@ -62,11 +62,11 @@ const Popup: React.FC<PopupProps> = ({
         )}
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
+        <Button className="shop" onClick={handleClose}>
           Close
         </Button>
         <Button
-          variant="primary"
+          className="shop"
           onClick={() => {
             handleBuy();
             navigate("/collection");
