@@ -13,6 +13,8 @@ interface PopupProps {
   handleBuy: () => void;
 }
 
+// ... (imports remain unchanged)
+
 const Popup: React.FC<PopupProps> = ({
   show,
   handleClose,
@@ -39,14 +41,16 @@ const Popup: React.FC<PopupProps> = ({
         {boughtNFTs.length > 0 ? (
           <>
             <p className="NFT-amount">Your NFTs</p>
-            {boughtNFTs.map((boughtNFT) => (
-              <img
-                key={boughtNFT.id}
-                src={boughtNFT.imgsrc}
-                alt={`Bought NFT ${boughtNFT.id}`}
-                className="img-fluid"                
-              />
-            ))}
+            <div className="row row-cols-2">
+              {boughtNFTs.map((boughtNFT) => (
+                <img
+                  key={boughtNFT.id}
+                  src={boughtNFT.imgsrc}
+                  alt={`Bought NFT ${boughtNFT.id}`}
+                  className="img-fluid nft-item"
+                />
+              ))}
+            </div>
           </>
         ) : boughtNFT ? (
           <>
@@ -54,7 +58,7 @@ const Popup: React.FC<PopupProps> = ({
             <img
               src={boughtNFT.imgsrc}
               alt={`Bought NFT ${boughtNFT.id}`}
-              className="img-fluid"
+              className=" NFT-img img-fluid"              
             />
           </>
         ) : (
